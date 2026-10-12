@@ -2,7 +2,7 @@ import profileImage from "../assets/salem.jpeg";
 import portfolioProjectImage from "../assets/project-portfolio.png";
 import alAmiahCleaningImage from "../assets/project-alamiah-cleaning-mecca.png";
 import alimanRouhImage from "../assets/project-aliman-rouh.jpg";
-import alimanRouhGoldenImage from "../assets/project-aliman-rouh-golden.jpg";
+import alimanRouhGoldenImage from "../assets/project-aliman-rouh-golden.png";
 
 export const site = {
   name: "Salem Ebrahim",
