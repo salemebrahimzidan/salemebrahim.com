@@ -4,25 +4,26 @@
 @import '@fontsource/poppins/latin-600.css';
 @import '@fontsource/poppins/latin-700.css';
 
-/* BITS-inspired corporate palette (https://www.bits.sa/) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
 
   --color-background: #ffffff;
-  --color-foreground: #0d2149;
-  --color-primary: #0d2149;
-  --color-accent: #022b48;
-  --color-accent-warm: #c60a32;
-  --color-secondary: #f5f5f5;
-  --color-muted: #6b7280;
-  --color-muted-foreground: #4f5969;
-  --color-border: #e2e8f0;
+  --color-foreground: #1e293b;
+  --color-primary: #0f172a;
+  --color-accent: #e11d48;
+  --color-accent-warm: #e11d48;
+  --color-secondary: #f8fafc;
+  --color-muted: #64748b;
+  --color-muted-foreground: #64748b;
+  --color-border: #e8edf5;
   --color-card: #ffffff;
   --color-navbar: #ffffff;
 
-  --color-ref-blue: #0d2149;
-  --color-ref-cyan: #0563ad;
-  --color-primary-dark: #022b48;
+  --color-ref-blue: #0f172a;
+  --color-ref-cyan: #e11d48;
+  --color-primary-dark: #0f172a;
 }
 
 @layer base {
@@ -53,14 +54,45 @@
   }
 
   ::selection {
-    background-color: rgb(13 33 73 / 0.12);
-    color: #0d2149;
+    background-color: rgb(225 29 72 / 0.16);
+    color: #0f172a;
+  }
+
+  html.dark {
+    color-scheme: dark;
+    --color-background: #0b1020;
+    --color-foreground: #e2e8f0;
+    --color-primary: #f8fafc;
+    --color-accent: #fb7185;
+    --color-accent-warm: #fb7185;
+    --color-secondary: #12182b;
+    --color-muted: #94a3b8;
+    --color-muted-foreground: #94a3b8;
+    --color-border: #243049;
+    --color-card: #141b30;
+    --color-navbar: #0b1020;
+    --color-ref-blue: #f8fafc;
+    --color-ref-cyan: #fb7185;
+    --color-primary-dark: #020617;
+  }
+
+  html.dark ::selection {
+    background-color: rgb(251 113 133 / 0.28);
+    color: #fff;
   }
 }
 
 @layer components {
   .section-shell {
-    @apply scroll-mt-24 py-16 md:py-24;
+    @apply scroll-mt-24 py-16 md:py-20;
+  }
+
+  .section-wrap {
+    @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .font-hand {
+    font-family: Caveat, 'Segoe Script', cursive;
   }
 
   .section-eyebrow {
@@ -76,7 +108,7 @@
   }
 
   .surface-card {
-    @apply rounded-xl border border-border bg-card text-foreground shadow-[0_12px_40px_rgba(15,23,42,0.08)];
+    @apply rounded-2xl border border-border bg-card text-foreground shadow-[0_10px_30px_rgba(15,23,42,0.06)];
   }
 
   .section-panel {
@@ -87,24 +119,21 @@
     @apply inline-flex rounded-full border border-border bg-secondary px-3.5 py-1.5 text-sm font-medium text-foreground transition-colors hover:border-accent/30;
   }
 
-  .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(13,33,73,0.18)] transition-colors hover:bg-accent;
-  }
-
+  .btn-primary,
   .btn-accent {
-    @apply inline-flex items-center justify-center rounded-lg bg-accent-warm px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(198,10,50,0.2)] transition-colors hover:bg-[#a8092a];
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent-warm px-6 py-3 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(225,29,72,0.28)] transition hover:brightness-95;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center rounded-lg border border-border bg-white px-6 py-3 text-sm font-semibold text-primary transition-colors hover:border-primary/25 hover:bg-secondary;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-border bg-background px-6 py-3 text-sm font-semibold text-primary transition hover:border-accent-warm/40 hover:bg-secondary;
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center rounded-lg border border-border bg-white text-muted transition-colors hover:border-primary/20 hover:text-primary;
+    @apply inline-flex items-center justify-center rounded-xl border border-border bg-background text-muted transition hover:border-accent-warm/30 hover:text-primary;
   }
 
   .input-field {
-    @apply w-full rounded-lg border border-border bg-white px-4 py-3 text-foreground outline-none transition-colors placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15;
+    @apply w-full rounded-xl border border-border bg-background px-4 py-3 text-foreground outline-none transition placeholder:text-muted focus:border-accent focus:ring-2 focus:ring-accent/15;
   }
 
   .list-dot {

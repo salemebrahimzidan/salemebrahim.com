@@ -7,6 +7,9 @@
           var locale = localStorage.getItem('portfolio-locale')
           document.documentElement.lang = locale === 'ar' ? 'ar' : 'en'
           document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr'
+          if (localStorage.getItem('portfolio-theme') === 'dark') {
+            document.documentElement.classList.add('dark')
+          }
         } catch (_) {}
       })()
     </script>
@@ -19,7 +22,10 @@
       name="description"
       content="Salem Ebrahim — Frontend Developer building responsive web applications and business dashboards with React and TypeScript."
     />
-    <meta name="theme-color" content="#09090b" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
+    <meta name="theme-color" content="#ffffff" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Salem Ebrahim | Frontend Developer" />
     <meta

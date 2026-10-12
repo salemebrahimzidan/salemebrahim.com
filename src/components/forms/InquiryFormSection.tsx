@@ -2,6 +2,7 @@
 import { site } from '../../data/portfolio'
 import { useI18n } from '../../providers/i18n-context'
 import { Reveal } from '../ui/Reveal'
+import { SlashTitle } from '../ui/SlashTitle'
 
 const FORM_ENDPOINT = 'https://api.web3forms.com/submit'
 
@@ -42,13 +43,12 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="section-shell" aria-labelledby="contact-heading">
+    <section id="contact" className="section-shell border-t border-border/80" aria-labelledby="contact-heading">
+      <div className="section-wrap">
       <Reveal>
-        <div className="mb-14 text-center md:mb-16">
-          <h2 id="contact-heading" className="section-title mb-4">
-            {t('contact.title')}
-          </h2>
-          <p className="section-lead mx-auto">{t('contact.subtitle')}</p>
+        <div className="mb-10 max-w-2xl">
+          <SlashTitle id="contact-heading">{t('contact.title')}</SlashTitle>
+          <p className="section-lead mt-4">{t('contact.subtitle')}</p>
         </div>
       </Reveal>
 
@@ -137,6 +137,7 @@ export function ContactSection() {
             ) : null}
           </form>
         </Reveal>
+      </div>
       </div>
     </section>
   )
