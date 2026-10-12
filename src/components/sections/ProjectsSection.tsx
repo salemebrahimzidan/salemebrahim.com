@@ -3,6 +3,7 @@ import { caseStudies } from '../../data/portfolio'
 import type { ProjectCopyId } from '../../providers/localeTypes'
 import { useI18n } from '../../providers/i18n-context'
 import { Reveal } from '../ui/Reveal'
+import { SlashTitle } from '../ui/SlashTitle'
 
 const ProjectCard = memo(function ProjectCard({
   title,
@@ -20,8 +21,8 @@ const ProjectCard = memo(function ProjectCard({
   const demoExternal = demoUrl?.startsWith('http') ?? false
 
   return (
-    <article className="surface-card group flex h-full w-full flex-col overflow-hidden transition-shadow hover:shadow-[0_16px_48px_rgba(15,23,42,0.14)]">
-      <div className="relative h-48 shrink-0 overflow-hidden bg-secondary sm:h-52">
+    <article className="surface-card group flex h-full w-full flex-col overflow-hidden transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(15,23,42,0.1)]">
+      <div className="relative aspect-[16/10] shrink-0 overflow-hidden bg-secondary">
         <img
           src={image}
           alt={t('projects.previewAlt', { title })}
@@ -50,7 +51,7 @@ const ProjectCard = memo(function ProjectCard({
 
         <p className="section-eyebrow mb-3">{t('projects.highlightsLabel')}</p>
         <ul className="mb-6 flex-1 space-y-2.5 text-sm leading-snug text-muted-foreground sm:text-[0.9375rem]">
-          {highlights.map((line) => (
+          {highlights.slice(0, 4).map((line) => (
             <li key={line} className="flex gap-2.5">
               <span className="list-dot" aria-hidden />
               <span>{line}</span>
@@ -96,18 +97,16 @@ export function ProjectsSection() {
   const { t, messages } = useI18n()
 
   return (
-    <section id="projects" className="section-shell" aria-labelledby="projects-heading">
+    <section id="projects" className="section-shell border-t border-border/80" aria-labelledby="projects-heading">
+      <div className="section-wrap">
       <Reveal>
-        <div className="mb-12 max-w-3xl md:mx-auto md:text-center">
-          <p className="section-eyebrow md:mx-auto">{t('projects.eyebrow')}</p>
-          <h2 id="projects-heading" className="section-title mb-4">
-            {t('projects.title')}
-          </h2>
-          <p className="section-lead md:mx-auto">{t('projects.subtitle')}</p>
+        <div className="mb-10 max-w-2xl">
+          <SlashTitle id="projects-heading">{t('projects.title')}</SlashTitle>
+          <p className="section-lead mt-4">{t('projects.subtitle')}</p>
         </div>
       </Reveal>
 
-      <div className="grid max-w-5xl grid-cols-1 items-stretch gap-6 sm:gap-8 md:mx-auto lg:grid-cols-2">
+      <div className="grid grid-cols-1 items-stretch gap-6 sm:gap-8 lg:grid-cols-2">
         {caseStudies.map((project, i) => {
           const copy = isProjectCopyId(project.id) ? messages.projects.items[project.id] : undefined
           return (
@@ -123,6 +122,7 @@ export function ProjectsSection() {
             </Reveal>
           )
         })}
+      </div>
       </div>
     </section>
   )

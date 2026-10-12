@@ -1,3 +1,7 @@
+export type StatItem = { icon: 'users' | 'gear' | 'award' }
+export type ServiceItem = { icon: 'web' | 'responsive' | 'ui' | 'api' }
+export type SocialLink = { id: 'instagram' | 'facebook' | 'linkedin' | 'whatsapp' | 'twitter' }
+
 export type TimelineCopy = {
   title: string
   organization: string
@@ -17,6 +21,11 @@ export type ProjectCopy = {
 export type ProjectCopyId = 'aliman-rouh-golden' | 'aliman-rouh' | 'p2' | 'p1'
 
 export type SkillCategoryId = 'frontend' | 'state-data' | 'forms-validation' | 'tools'
+
+export type ServiceCopy = {
+  title: string
+  text: string
+}
 
 export type LocaleMessages = {
   nav: {
@@ -39,6 +48,8 @@ export type LocaleMessages = {
     github: string
     linkedin: string
     whatsapp: string
+    themeLight: string
+    themeDark: string
   }
   brand: {
     name: string
@@ -58,15 +69,24 @@ export type LocaleMessages = {
     github: string
     linkedin: string
     stack: string
+    badge: string
+    greeting: string
+    lead: string
+    noteLine1: string
+    noteLine2: string
+    cardTitle: string
+    cardSubtitle: string
   }
   about: {
     intro: string
     bio: string
+    learnMore: string
     whatIDoHeading: string
     whatIDoLead: string
     whatIDoFocusLabel: string
     whatIDoBullets: string[]
     whatIDoClosing: string
+    services: ServiceCopy[]
   }
   skills: {
     title: string
@@ -100,6 +120,7 @@ export type LocaleMessages = {
   contact: {
     title: string
     subtitle: string
+    intro: string
     location: string
     locationValue: string
     email: string

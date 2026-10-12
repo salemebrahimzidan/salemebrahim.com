@@ -3,6 +3,7 @@ import { HiBriefcase } from 'react-icons/hi'
 import type { QualificationKind } from '../../data/portfolio'
 import { useI18n } from '../../providers/i18n-context'
 import { Reveal } from '../ui/Reveal'
+import { SlashTitle } from '../ui/SlashTitle'
 
 function GradCapIcon({ className }: { className?: string }) {
   return (
@@ -14,7 +15,7 @@ function GradCapIcon({ className }: { className?: string }) {
 
 export function QualificationSection() {
   const { t, messages } = useI18n()
-  const [tab, setTab] = useState<QualificationKind>('education')
+  const [tab, setTab] = useState<QualificationKind>('experience')
   const items = tab === 'education' ? messages.qualification.educationItems : messages.qualification.experienceItems
   const tabs: { id: QualificationKind; label: string }[] = [
     { id: 'education', label: t('qualification.education') },
@@ -22,21 +23,20 @@ export function QualificationSection() {
   ]
 
   return (
-    <section id="qualification" className="section-shell" aria-labelledby="qual-heading">
+    <section id="qualification" className="section-shell border-t border-border/80" aria-labelledby="qual-heading">
+      <div className="section-wrap">
       <Reveal>
-        <div className="mb-14 text-center md:mb-16">
-          <h2 id="qual-heading" className="section-title mb-4">
-            {t('qualification.title')}
-          </h2>
-          <p className="section-lead mx-auto">{t('qualification.subtitle')}</p>
+        <div className="mb-10 max-w-2xl">
+          <SlashTitle id="qual-heading">{t('qualification.title')}</SlashTitle>
+          <p className="section-lead mt-4">{t('qualification.subtitle')}</p>
         </div>
       </Reveal>
 
-      <div className="mx-auto max-w-2xl">
+      <div className="mx-auto max-w-3xl">
         <Reveal delayMs={40}>
-          <div className="mb-12 flex justify-center">
+          <div className="mb-8 flex justify-start">
             <div
-              className="flex rounded-xl border border-border bg-secondary p-1 shadow-sm"
+              className="flex rounded-full border border-border bg-secondary p-1 shadow-sm"
               role="tablist"
               aria-label={t('qualification.tabsLabel')}
             >
@@ -49,9 +49,9 @@ export function QualificationSection() {
                     role="tab"
                     aria-selected={active}
                     onClick={() => setTab(item.id)}
-                    className={`cursor-pointer rounded-lg px-6 py-2 text-sm font-semibold transition-colors ${
+                    className={`cursor-pointer rounded-full px-6 py-2 text-sm font-semibold transition-colors ${
                       active
-                        ? 'bg-primary text-white shadow-sm'
+                        ? 'bg-accent-warm text-white shadow-sm'
                         : 'text-muted-foreground hover:text-primary'
                     }`}
                   >
@@ -101,6 +101,7 @@ export function QualificationSection() {
             ))}
           </div>
         </Reveal>
+      </div>
       </div>
     </section>
   )

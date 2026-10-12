@@ -47,7 +47,7 @@ const BRAND: Record<string, BrandIcon> = {
   supabase: { Icon: SiSupabase, color: '#3ECF8E', glow: 'rgba(62,207,142,0.4)' },
   postgresql: { Icon: SiPostgresql, color: '#4169E1', glow: 'rgba(65,105,225,0.4)' },
   git: { Icon: SiGit, color: '#F05032', glow: 'rgba(240,80,50,0.4)' },
-  github: { Icon: SiGithub, color: '#24292F', glow: 'rgba(36,41,47,0.2)' },
+  github: { Icon: SiGithub, color: 'var(--color-foreground)', glow: 'rgba(36,41,47,0.2)' },
   gitlab: { Icon: SiGitlab, color: '#FC6D26', glow: 'rgba(252,109,38,0.4)' },
   vite: { Icon: SiVite, color: '#646CFF', glow: 'rgba(100,108,255,0.4)' },
 }
@@ -63,15 +63,12 @@ const DEFAULT: BrandIcon = {
  * Brand hex on each icon; size is consistent across the Tech Stack grid.
  */
 export function SkillIcon({ skillId, className = '' }: SkillIconProps) {
-  const { Icon, color, glow } = BRAND[skillId] ?? DEFAULT
+  const { Icon, color } = BRAND[skillId] ?? DEFAULT
 
   return (
     <Icon
-      className={`!size-5 max-h-full max-w-full shrink-0 sm:!size-6 ${className}`}
-      style={{
-        color,
-        filter: glow ? `drop-shadow(0 0 3px ${glow})` : undefined,
-      }}
+      className={`size-7 shrink-0 ${className}`}
+      style={{ color }}
       aria-hidden
     />
   )

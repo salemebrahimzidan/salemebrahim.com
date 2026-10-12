@@ -34,18 +34,21 @@ export function SiteFooter() {
   }
 
   return (
-    <footer className="border-t border-border bg-secondary pt-14 pb-8">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <footer className="border-t border-border bg-background pt-14 pb-8">
+      <div className="section-wrap">
         <div className="grid gap-10 md:grid-cols-3 md:gap-8">
           <div>
-            <h3 className="mb-3 text-base font-bold tracking-tight text-primary md:text-start">
+            <h3 className="mb-3 flex items-center gap-2.5 text-base font-bold tracking-tight text-primary">
+              <span className="flex size-8 items-center justify-center rounded-lg bg-accent-warm text-sm font-bold text-white">
+                S
+              </span>
               {first}
-              {rest ? <span className="font-semibold text-muted-foreground">{rest}</span> : null}
+              {rest ? <span className="font-semibold">{rest}</span> : null}
             </h3>
             <p className="max-w-xs text-sm leading-relaxed text-muted-foreground md:text-start">{t('footer.blurb')}</p>
           </div>
           <div>
-            <h3 className="locale-label mb-4 text-sm font-semibold uppercase tracking-wider text-accent">
+            <h3 className="locale-label mb-4 text-sm font-semibold text-primary">
               {t('footer.quickLinks')}
             </h3>
             <ul className="space-y-2">
@@ -63,7 +66,7 @@ export function SiteFooter() {
             </ul>
           </div>
           <div className="md:text-end">
-            <h3 className="locale-label mb-4 text-sm font-semibold uppercase tracking-wider text-accent">
+            <h3 className="locale-label mb-4 text-sm font-semibold text-primary">
               {t('footer.connect')}
             </h3>
             <div className="flex items-center gap-2 md:justify-end">

@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "about": "About",
-    "skills": "Tech Stack",
+    "skills": "Skills",
     "trust": "Approach",
     "projects": "Projects",
     "qualification": "Experience",
@@ -18,7 +18,9 @@
     "menu": "Menu",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "themeLight": "Switch to light mode",
+    "themeDark": "Switch to dark mode"
   },
   "brand": {
     "name": "Salem Ebrahim"
@@ -30,9 +32,16 @@
   "hero": {
     "kicker": "React • TypeScript • Modern Web Applications",
     "headline": "Frontend Developer building modern React applications",
-    "subline": "I build responsive, scalable web applications and business dashboards using React, TypeScript, and modern frontend technologies.",
+    "subline": "Frontend Developer with hands-on experience in building scalable web applications using React, TypeScript, and modern tools. I focus on creating clean, accessible, and high-performance user experiences.",
     "viewProjects": "View Projects",
-    "contact": "Contact Me",
+    "contact": "Get In Touch",
+    "badge": "Frontend Developer",
+    "greeting": "Hi, I'm",
+    "lead": "I build modern and responsive web applications.",
+    "noteLine1": "Better UI experiences,",
+    "noteLine2": "Better products.",
+    "cardTitle": "React + TypeScript",
+    "cardSubtitle": "Tailwind + Vite",
     "downloadCv": "Download CV",
     "support": "Focused on clean architecture, performance, usability, and maintainable code.",
     "github": "GitHub",
@@ -41,8 +50,9 @@
   },
   "about": {
     "intro": "About Me",
-    "bio": "I'm a Frontend Developer specializing in React and TypeScript, focused on building responsive web applications, dashboards, and business systems. I enjoy turning complex workflows into clear, usable interfaces and working with APIs, authentication, data management, and role-based applications.",
-    "whatIDoHeading": "What I Actually Do",
+    "bio": "I'm a passionate Frontend Developer with a strong focus on creating intuitive and high-performing web applications. I enjoy turning ideas into clean, scalable interfaces and always strive to improve my skills and deliver the best user experience.",
+    "learnMore": "Learn more about me",
+    "whatIDoHeading": "What I Do",
     "whatIDoLead": "Recent work includes customer-facing websites, admin panels, and an operations dashboard that is live in production.",
     "whatIDoFocusLabel": "Practical work includes:",
     "whatIDoBullets": [
@@ -56,7 +66,25 @@
       "Responsive web applications",
       "Production deployment"
     ],
-    "whatIDoClosing": "I focus on interfaces that stay clear as the workflow gets more detailed."
+    "whatIDoClosing": "I focus on interfaces that stay clear as the workflow gets more detailed.",
+    "services": [
+      {
+        "title": "Responsive Websites",
+        "text": "Pixel-perfect, fast and accessible designs."
+      },
+      {
+        "title": "Dashboard & SaaS",
+        "text": "Modern and scalable interfaces."
+      },
+      {
+        "title": "API Integration",
+        "text": "Connect and manage data efficiently."
+      },
+      {
+        "title": "UI/UX Implementation",
+        "text": "Clean code, reusable components, best practices."
+      }
+    ]
   },
   "skills": {
     "title": "Tech Stack",
@@ -76,8 +104,8 @@
   },
   "projects": {
     "eyebrow": "Selected work",
-    "title": "Case studies",
-    "subtitle": "Deployed work, with the stack and the main frontend responsibilities for each project.",
+    "title": "Projects",
+    "subtitle": "Production work — customer websites, admin dashboards, and operations systems.",
     "highlightsLabel": "Highlights",
     "opensInNewTab": " (opens in a new tab)",
     "previewAlt": "{{title}} preview",
@@ -143,7 +171,7 @@
     }
   },
   "qualification": {
-    "title": "My Qualification",
+    "title": "Experience",
     "subtitle": "Where I studied and the roles that shaped how I work today.",
     "tabsLabel": "Qualification type",
     "education": "Education",
@@ -180,6 +208,7 @@
   "contact": {
     "title": "Get In Touch",
     "subtitle": "Send a message and I will get back to you as soon as I can.",
+    "intro": "I'm always open to discussing new opportunities, collaborations, or just a friendly chat. Feel free to reach out!",
     "location": "Location",
     "locationValue": "Riyadh, Saudi Arabia",
     "email": "Email",
